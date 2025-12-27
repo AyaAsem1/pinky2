@@ -1,0 +1,384 @@
+/* HotSpicy.css */
+.hot-spicy {
+  padding: 100px 20px 60px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hot-spicy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 93, 143, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hot-spicy-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hot-spicy-text {
+  flex: 1;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.hot-spicy-tag {
+  display: inline-block;
+  font-size: 14px;
+  color: #ff5d8f;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+}
+
+.hot-spicy-tag::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #ff5d8f;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.hot-spicy-title {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hot-spicy-title br {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.hot-spicy-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 40px;
+  max-width: 520px;
+  font-weight: 300;
+}
+
+.shop-lips-btn {
+  background: linear-gradient(45deg, #ff5d8f, #ff8fab);
+  color: #ffffff;
+  border: none;
+  padding: 18px 45px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255, 93, 143, 0.3);
+}
+
+.shop-lips-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.shop-lips-btn:hover::before {
+  left: 100%;
+}
+
+.shop-lips-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 93, 143, 0.4);
+  background: linear-gradient(45deg, #ff4f81, #ff7f9e);
+}
+
+.shop-lips-btn:active {
+  transform: translateY(-2px);
+}
+
+.shop-lips-btn i {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+
+.shop-lips-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* الصورة المحدثة */
+.hot-spicy-image {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  animation: fadeInRight 0.8s ease-out;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.hot-spicy-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hot-spicy-image:hover .hot-spicy-img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overlay-badge {
+  background: rgba(255, 93, 143, 0.95);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+.overlay-badge:nth-child(2) {
+  background: rgba(255, 69, 0, 0.95);
+  animation-delay: 0.5s;
+}
+
+.floating-label {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite 1s;
+}
+
+.floating-label i {
+  color: #ff5d8f;
+  font-size: 16px;
+}
+
+/* تذييل السكشن */
+.hot-spicy-footer {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-items {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.footer-item:hover {
+  transform: translateY(-5px);
+}
+
+.footer-item i {
+  font-size: 28px;
+  color: #ff5d8f;
+  background: rgba(255, 93, 143, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.footer-item:hover i {
+  background: #ff5d8f;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.footer-item span {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* أنيميشنز */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-50%) scale(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hot-spicy-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .hot-spicy-title {
+    font-size: 42px;
+  }
+  
+  .hot-spicy-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hot-spicy-image {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .hot-spicy-img {
+    height: 400px;
+  }
+  
+  .footer-items {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hot-spicy {
+    padding: 70px 15px 40px;
+  }
+  
+  .hot-spicy-title {
+    font-size: 36px;
+  }
+  
+  .hot-spicy-description {
+    font-size: 16px;
+  }
+  
+  .shop-lips-btn {
+    padding: 16px 35px;
+    font-size: 15px;
+  }
+  
+  .hot-spicy-img {
+    height: 350px;
+  }
+  
+  .footer-items {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hot-spicy-title {
+    font-size: 32px;
+  }
+  
+  .hot-spicy-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  
+  .hot-spicy-img {
+    height: 300px;
+  }
+  
+  .floating-label {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

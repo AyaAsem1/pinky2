@@ -1,0 +1,92 @@
+.notification {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 9999;
+  min-width: 300px;
+  max-width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateX(120%);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  overflow: hidden;
+  border-left: 5px solid;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification.success {
+  border-left-color: #ff6b8b;
+}
+
+.notification.success .notification-icon {
+  color: #ff6b8b;
+}
+
+.notification.error {
+  border-left-color: #ff4757;
+}
+
+.notification.info {
+  border-left-color: #2ed573;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 15px;
+}
+
+.notification-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.notification-text {
+  flex-grow: 1;
+}
+
+.notification-text p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.notification-close:hover {
+  color: #666;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Animation for mobile */
+@media (max-width: 768px) {
+  .notification {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    max-width: none;
+    transform: translateY(120%);
+  }
+  
+  .notification.show {
+    transform: translateY(0);
+  }
+}

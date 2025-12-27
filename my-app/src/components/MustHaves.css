@@ -1,0 +1,335 @@
+/* components/MustHaves.css */
+.must-haves {
+  width: 100%;
+  padding: 75px 20px;
+  background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.must-haves::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(255, 194, 209, 0.1) 0%, 
+    rgba(255, 143, 171, 0.05) 100%);
+  pointer-events: none;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: var(--black);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--pink-medium), var(--pink-deep));
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--pink-deep);
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 25px;
+}
+
+.must-haves .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin: 0 auto 70px;
+}
+
+.must-haves .product-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 1px solid rgba(255, 143, 171, 0.1);
+}
+
+.must-haves .product-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(255, 93, 143, 0.15);
+  border-color: rgba(255, 143, 171, 0.3);
+}
+
+.must-haves .product-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.must-haves .image-main, .image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.6s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.image-main {
+  opacity: 1;
+}
+
+.image-main.hovered {
+  opacity: 0;
+}
+
+.image-hover {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: overlay;
+}
+
+.image-hover.active {
+  opacity: 1;
+}
+
+/* أيقونات في الأعلى - تظهر عند الهوفر */
+.product-top-icons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.product-top-icons.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.favorite-btn, .add-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  color: var(--black);
+  font-size: 18px;
+}
+
+.favorite-btn:hover, .add-icon-btn:hover {
+  background: var(--pink-light);
+  transform: scale(1.1);
+}
+
+/* القلب المفرغ والسوليد */
+.favorite-btn i.fa-heart {
+  color: var(--pink-deep);
+}
+
+.favorite-btn i.far.fa-heart {
+  color: var(--black);
+}
+
+.favorite-btn.favorited i.fa-heart {
+  color: var(--pink-deep);
+}
+
+/* السعر عند الهوفر */
+.product-hover-price {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 25px;
+  border-radius: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 5;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-hover-price.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.price-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+}
+
+.product-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.product-name {
+  font-size: 18px !important;
+  color: var(--black);
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.product-price-mobile {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+  display: none;
+}
+
+/* إزالة زر Add to Cart الكبير */
+.add-to-cart-btn {
+  display: none;
+}
+
+/* إزالة الريتنج والـ reviews */
+.product-rating,
+.stars,
+.reviews,
+.product-meta {
+  display: none;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  .must-haves {
+    padding: 70px 15px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .product-image {
+    height: 250px;
+  }
+  
+  .product-hover-price {
+    display: none;
+  }
+  
+  .product-price-mobile {
+    display: block;
+  }
+  
+  /* في الموبايل، تظهر الأيقونات دائمًا */
+  .product-top-icons {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* أضف هذه القواعد الجديدة */
+.product-image-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.product-image {
+  cursor: default;
+}
+
+.product-name-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.product-name-link:hover .product-name {
+  color: #ff6b8b;
+}
+
+/* تأكد من أن الأيقونات تظهر فوق الروابط */
+.product-top-icons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.product-top-icons.visible {
+  opacity: 1;
+}
+
+.product-top-icons button {
+  background: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.3s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-top-icons button:hover {
+  background: #ff6b8b;
+  color: white;
+  transform: scale(1.1);
+}
+
+.favorite-btn.favorited {
+  color: #ff6b8b;
+}

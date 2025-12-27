@@ -1,0 +1,1295 @@
+/* Evening Gowns Collection - Pinky Theme */
+.evening-gowns {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, 
+    #ffffff 0%, 
+    #fff5f7 50%, 
+    #ffeef2 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.pinky-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pinky-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 107, 139, 0.1);
+  animation: pinkyFloat 8s ease-in-out infinite;
+}
+
+.dot-1 {
+  width: 150px;
+  height: 150px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  width: 100px;
+  height: 100px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.dot-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.gowns-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* الهيدر */
+.gowns-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pinky-header-top {
+  margin-bottom: 40px;
+}
+
+.pinky-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.pinky-line {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff6b8b, transparent);
+}
+
+.pinky-icon {
+  font-size: 24px;
+  color: #ff6b8b;
+}
+
+.gowns-title {
+  font-size: 72px;
+  color: #2d3436;
+  margin: 20px 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.gowns-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #ff6b8b;
+  border-radius: 2px;
+}
+
+.gowns-subtitle {
+  font-size: 18px;
+  color: #636e72;
+  max-width: 700px;
+  margin: 40px auto 0;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.color-pink {
+  color: #ff6b8b;
+  font-weight: 600;
+}
+
+.color-black {
+  color: #2d3436;
+  font-weight: 600;
+}
+
+.color-white {
+  color: #636e72;
+  font-weight: 600;
+  text-shadow: 0 1px 0 #fff;
+}
+
+/* الفلاتر */
+.gowns-filters {
+  margin-top: 50px;
+}
+
+.filter-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 107, 139, 0.2);
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 107, 139, 0.3);
+  color: #636e72;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  color: #ff6b8b;
+  border-color: #ff6b8b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 139, 0.1);
+}
+
+.filter-btn.active {
+  background: #ff6b8b;
+  color: white;
+  border-color: #ff6b8b;
+  box-shadow: 0 5px 15px rgba(255, 107, 139, 0.2);
+}
+
+.filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  min-width: 25px;
+  text-align: center;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* عرض الفساتين */
+.gowns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.gown-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 1px solid rgba(255, 107, 139, 0.1);
+}
+
+.gown-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(255, 107, 139, 0.15),
+    0 0 0 1px rgba(255, 107, 139, 0.2);
+}
+
+/* البادجات */
+.gown-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 20px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 10;
+  background: white;
+  border: 1px solid rgba(255, 107, 139, 0.3);
+  text-transform: uppercase;
+  color: #ff6b8b;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gown-badge.bestseller {
+  background: #ff6b8b;
+  color: white;
+  border-color: #ff6b8b;
+}
+
+.gown-badge.new-arrival {
+  background: #2d3436;
+  color: white;
+  border-color: #2d3436;
+}
+
+.gown-badge.trending {
+  background: #06d6a0;
+  color: white;
+  border-color: #06d6a0;
+}
+
+.gown-badge.pinky-exclusive {
+  background: linear-gradient(45deg, #ff6b8b, #ff8fab);
+  color: white;
+  border: none;
+}
+
+.gown-badge.classic {
+  background: #636e72;
+  color: white;
+  border-color: #636e72;
+}
+
+.gown-badge.popular {
+  background: #ffd166;
+  color: #2d3436;
+  border-color: #ffd166;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2d3436;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* الصور */
+.gown-image-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.gown-main-image,
+.gown-hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gown-main-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gown-main-image.hidden {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.gown-hover-image {
+  opacity: 0;
+  transform: scale(1.1);
+  background: linear-gradient(rgba(45, 52, 54, 0.9), rgba(45, 52, 54, 0.95)), var(--bg-image);
+  display: flex;
+  align-items: flex-end;
+}
+
+.gown-hover-image.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hover-details {
+  width: 100%;
+  padding: 30px;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.6s ease 0.2s;
+  background: linear-gradient(transparent, rgba(45, 52, 54, 0.95));
+}
+
+.gown-hover-image.active .hover-details {
+  transform: translateY(0);
+}
+
+.details-content h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ffd6e0;
+}
+
+.details-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.dress-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.available-colors,
+.available-sizes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.available-colors span,
+.available-sizes span {
+  font-size: 13px;
+  opacity: 0.8;
+  min-width: 50px;
+}
+
+.color-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-dot:hover {
+  transform: scale(1.2);
+}
+
+.size-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.size-badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hover-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.quick-view-btn,
+.add-to-cart-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.quick-view-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.add-to-cart-btn {
+  background: #ff6b8b;
+  color: white;
+  border: none;
+}
+
+.quick-view-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.add-to-cart-btn:hover {
+  background: #ff4f72;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 139, 0.3);
+}
+
+/* معلومات الفستان */
+.gown-info {
+  padding: 25px;
+  background: white;
+  border-top: 1px solid rgba(255, 107, 139, 0.1);
+}
+
+.gown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.gown-category {
+  font-size: 12px;
+  color: #ff6b8b;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.wishlist-btn {
+  background: transparent;
+  border: none;
+  color: #adb5bd;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-btn:hover {
+  color: #ff6b8b;
+  background: rgba(255, 107, 139, 0.1);
+  transform: scale(1.1);
+}
+
+.gown-name {
+  font-size: 18px;
+  color: #2d3436;
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.gown-pricing {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ff6b8b;
+}
+
+.original-price {
+  font-size: 16px;
+  color: #adb5bd;
+  text-decoration: line-through;
+}
+
+.view-details-btn {
+  width: 100%;
+  background: #f8f9fa;
+  color: #2d3436;
+  border: 1px solid rgba(255, 107, 139, 0.2);
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.view-details-btn:hover {
+  background: #ff6b8b;
+  color: white;
+  border-color: #ff6b8b;
+  transform: translateY(-2px);
+  gap: 15px;
+}
+
+/* Call to Action */
+.gowns-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 80px;
+  padding: 60px;
+  background: linear-gradient(135deg, 
+    rgba(255, 107, 139, 0.05) 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(255, 107, 139, 0.05) 100%
+  );
+  border-radius: 30px;
+  border: 1px solid rgba(255, 107, 139, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.cta-content h2 {
+  font-size: 36px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.cta-content p {
+  font-size: 16px;
+  color: #636e72;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cta-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #2d3436;
+}
+
+.feature i {
+  color: #ff6b8b;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 107, 139, 0.1);
+  border-radius: 10px;
+}
+
+.feature h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #2d3436;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #636e72;
+  margin: 0;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.shop-all-btn,
+.whatsapp-btn {
+  padding: 16px 35px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.shop-all-btn {
+  background: #2d3436;
+  color: white;
+  border-color: #2d3436;
+}
+
+.whatsapp-btn {
+  background: transparent;
+  color: #2d3436;
+  border-color: rgba(45, 52, 54, 0.3);
+}
+
+.shop-all-btn:hover {
+  background: #ff6b8b;
+  border-color: #ff6b8b;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 139, 0.3);
+}
+
+.whatsapp-btn:hover {
+  background: #25D366;
+  color: white;
+  border-color: #25D366;
+  transform: translateY(-3px);
+}
+
+.cta-image .image-frame {
+  height: 400px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 107, 139, 0.1);
+}
+
+.store-info h3 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 15px;
+}
+
+.store-info p {
+  color: #636e72;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.directions-btn {
+  margin-top: 20px;
+  background: transparent;
+  color: #ff6b8b;
+  border: 1px solid #ff6b8b;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.directions-btn:hover {
+  background: #ff6b8b;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* أنيميشنز */
+@keyframes pinkyFloat {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .gowns-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gowns-cta {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .evening-gowns {
+    padding: 70px 15px;
+  }
+  
+  .gowns-title {
+    font-size: 48px;
+  }
+  
+  .gowns-subtitle {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+  
+  .filter-categories {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 15px;
+  }
+  
+  .filter-btn {
+    justify-content: center;
+  }
+  
+  .gowns-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 60px;
+  }
+  
+  .gown-image-container {
+    height: 400px;
+  }
+  
+  .gowns-cta {
+    padding: 40px 20px;
+  }
+  
+  .cta-content h2 {
+    font-size: 28px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .shop-all-btn,
+  .whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .feature {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gowns-title {
+    font-size: 36px;
+  }
+  
+  .pinky-icon {
+    font-size: 20px;
+  }
+  
+  .gown-card {
+    margin: 0 10px;
+  }
+  
+  .gown-image-container {
+    height: 350px;
+  }
+  
+  .hover-actions {
+    flex-direction: column;
+  }
+}
+
+.cta-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* قسم الخريطة */
+.cta-map {
+  position: relative;
+}
+
+.map-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 107, 139, 0.1);
+  background: white;
+}
+
+.map-wrapper {
+  position: relative;
+  height: 400px;
+}
+
+.google-map {
+  width: 100%;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+.map-wrapper:hover .google-map {
+  filter: grayscale(0%);
+}
+
+.store-info-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 107, 139, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards 0.3s;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.store-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 107, 139, 0.1);
+}
+
+.store-header i {
+  color: #ff6b8b;
+  font-size: 24px;
+  background: rgba(255, 107, 139, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-header h3 {
+  font-size: 22px;
+  color: #2d3436;
+  margin: 0;
+}
+
+.store-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.detail-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.detail-item i {
+  color: #ff6b8b;
+  font-size: 18px;
+  margin-top: 2px;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.detail-item h4 {
+  font-size: 14px;
+  color: #636e72;
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-item p {
+  font-size: 15px;
+  color: #2d3436;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-hours {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #2d3436;
+}
+
+.day-hours span:first-child {
+  font-weight: 500;
+  color: #636e72;
+}
+
+.day-hours span:last-child {
+  font-weight: 600;
+  color: #ff6b8b;
+  background: rgba(255, 107, 139, 0.1);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.map-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.directions-link,
+.call-now-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s;
+  min-width: 160px;
+}
+
+.directions-link {
+  background: #2d3436;
+  color: white;
+  border: 2px solid #2d3436;
+}
+
+.call-now-btn {
+  background: transparent;
+  color: #2d3436;
+  border: 2px solid rgba(255, 107, 139, 0.3);
+}
+
+.directions-link:hover {
+  background: #ff6b8b;
+  border-color: #ff6b8b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 107, 139, 0.2);
+}
+
+.call-now-btn:hover {
+  background: #ff6b8b;
+  color: white;
+  border-color: #ff6b8b;
+  transform: translateY(-2px);
+}
+
+/* مؤشر الخريطة المخصص */
+.map-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 40px;
+  height: 40px;
+  background: #ff6b8b;
+  border-radius: 50%;
+  z-index: 10;
+  animation: pulseMap 2s infinite;
+  border: 4px solid white;
+  box-shadow: 0 0 0 8px rgba(255, 107, 139, 0.3);
+}
+
+.map-container::after {
+  content: '📍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 24px;
+  z-index: 11;
+  animation: bounce 2s infinite;
+}
+
+@keyframes pulseMap {
+  0%, 100% {
+    box-shadow: 0 0 0 8px rgba(255, 107, 139, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 107, 139, 0.1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -100%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -100%) translateY(-5px);
+  }
+}
+
+/* Responsive للخريطة */
+@media (max-width: 1200px) {
+  .gowns-cta {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .store-info-overlay {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin: 20px;
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+  
+  .map-wrapper {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-wrapper {
+    height: 300px;
+  }
+  
+  .store-info-overlay {
+    padding: 20px;
+  }
+  
+  .store-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .day-hours {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .map-actions {
+    flex-direction: column;
+  }
+  
+  .directions-link,
+  .call-now-btn {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-wrapper {
+    height: 250px;
+  }
+  
+  .store-info-overlay {
+    margin: 15px;
+    padding: 15px;
+  }
+  
+  .store-header h3 {
+    font-size: 18px;
+  }
+  
+  .detail-item h4 {
+    font-size: 12px;
+  }
+  
+  .detail-item p {
+    font-size: 14px;
+  }
+  .hover-details{
+    transform: translateY(22%);
+    -webkit-transform: translateY(22%);
+    -moz-transform: translateY(22%);
+    -ms-transform: translateY(22%);
+    -o-transform: translateY(22%);
+}
+.whatsapp-community,.facebook-community{
+      flex-direction: column;
+}
+}
+
+.cta-buttons{
+  flex-direction: column;
+}
+.facebook-community {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(24, 119, 242, 0.1), rgba(255, 107, 139, 0.1));
+  border-radius: 20px;
+  border: 1px solid rgba(24, 119, 242, 0.2);
+}
+
+.community-icon {
+  background: #1877F2;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.community-info {
+  flex: 1;
+}
+
+.community-info h3 {
+  font-size: 18px;
+  color: #2d3436;
+  margin-bottom: 8px;
+}
+
+.community-info p {
+  font-size: 14px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.join-facebook-btn {
+  background: #1877F2;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.join-facebook-btn:hover {
+  background: #166FE5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
+  gap: 15px;
+}
+
+/* WhatsApp Community Styles */
+.whatsapp-community {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(255, 107, 139, 0.1));
+  border-radius: 20px;
+  border: 1px solid rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-community .community-icon {
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.whatsapp-community .community-info {
+  flex: 1;
+}
+
+.whatsapp-community .community-info h3 {
+  font-size: 18px;
+  color: #2d3436;
+  margin-bottom: 8px;
+}
+
+.whatsapp-community .community-info p {
+  font-size: 14px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.join-whatsapp-btn {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.join-whatsapp-btn:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  gap: 15px;
+}
+
+.gm-style .place-card-medium{
+  display: none;
+}
+
+.hover-details{
+  opacity: 0;
+}
+
+.gown-card:hover .hover-details{
+  opacity: 1;
+}
